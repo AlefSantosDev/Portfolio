@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio Alef Dias</title>
+  <!-- Devicon -->
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="src/css/styles.css" />
+</head>
+<body>
+
+  <div class="spotlight-background" id="spotlight"></div>
+
+  <!-- Navbar -->
+
+<nav class="navbar" data-aos="fade-down">
+  <div style="width: 32px;"></div>
+    <div class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </div>
+  <div class="nav-center">
+    <ul class="nav-list">
+      <li><a href="#home" data-translate-key="homeTitle">Início</a></li>
+      <li><a href="#about" data-translate-key="aboutTitle">Sobre mim</a></li>
+      <li><a href="#skills" data-translate-key="skillsTitle">Habilidades</a></li>
+      <li><a href="#projects" data-translate-key="projectsTitle">Projetos</a></li>
+      <li><a href="#contact" data-translate-key="contactTitle">Contato</a></li>
+    </ul>
+  </div>
+
+  <div class="settings-container">
+    <div class="settings-icon" id="settingsToggle">
+      <i class="fa-solid fa-gear"></i>
+    </div>
+    <div class="settings-menu" id="settingsMenu">
+  <div class="switch">
+  <label class="switch-label">
+    <input type="checkbox" id="darkModeToggle">
+    <span class="slider"></span>
+  </label>
+  <span class="switch-text" data-translate-key="theme">Alterar tema</span>
+  </div>
+
+  <div class="language-select">
+    <label for="language" data-translate-key="languages">Idioma</label>
+    <select id="language">
+      <option value="pt">Português</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+  </div>
+</nav>
+
+<!-- Inicio -->
+
+<section class="home" id="home">
+  <div class="hello" data-aos="fade-up">
+    <h1 id="typing">Hello, World</h1>
+
+    <div class="social-icons" data-aos="fade-up">
+      <a href="https://github.com/AlefSantosDev" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/alef-santos-dias-51410128a/" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://wa.me/5513997600717" target="_blank" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+    <a href="src/CV Alef Santos Dias.pdf" download class="btn-download" data-aos="fade-up"><i class="fa-solid fa-download"></i> CV</a>
+  </div>
+</section>
+
+  <!-- Sobre -->
+
+<section class="about" id="about">
+  <div style="width: 100%; text-align: center; margin: 40 0px 60 0px;" data-aos="zoom-in">
+  <h2 style="font-size: 2rem;" data-translate-key="aboutme">Sobre Mim</h2>
+</div>
+  <div class="perfil" data-aos="fade-right">
+    <img src="src/img/Perfil.jpg" alt="Perfil" />
+  </div>
+  <div class="about-me" data-aos="fade-left">
+    <p data-translate-key="paragraph">
+      Atualmente cursando Sistemas de Informação na Universidade Santa Cecília, em Santos, sou residente de Cubatão (SP). Entusiasta de soluções baseadas em Inteligência Artificial, desenvolvimento back-end e aplicações web. Valorizo boas práticas de codificação, organização estruturada de projetos e foco na experiência do usuário.
+    </p>
+  </div>
+</section>
+
+<!-- Experiencia -->
+
+<section class="col" data-aos="fade-up">
+  <div class="experience">
+    <header class="title" data-aos="fade-right">
+      <h2>Educação</h2>
+    </header>
+    <div class="contents">
+      <div class="box" data-aos="fade-up" data-aos-delay="100">
+        <h4>2021 - 2024</h4>
+        <h3>Ensino Médio</h3>
+        <p>Concluí o Ensino Médio com foco em disciplinas de exatas, desenvolvendo habilidades em lógica, matemática e resolução de problemas. Durante esse período, também participei de projetos escolares voltados à tecnologia</p>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="200">
+        <h4>2022 - 2024</h4>
+        <h3>Técnico em Informática</h3>
+        <p>Formação técnica voltada para o suporte ao usuário, manutenção de computadores, redes e suporte técnico. Durante o curso, tive contato com linguagens de programação, bancos de dados e práticas de infraestrutura.</p>
+      </div>
+
+      <div class="box" data-aos="fade-up" data-aos-delay="300">
+        <h4>2025 - 2029</h4>
+        <h3>Bacharel em Sistemas de Informação</h3>
+        <p>Curso superior focado em desenvolvimento de software, arquitetura de sistemas, inteligência artificial e gestão de projetos. Aprimoro constantemente minhas habilidades em programação.</p>
+      </div>
+    </div>
+  </div>  
+</section>
+
+  <!-- Habilidades -->
+
+<section class="skills" id="skills">
+  <div style="width: 100%; text-align: center; margin-bottom: 25px;" data-aos="zoom-in"></div>
+  <h2 data-aos="zoom-in" style="font-size: 2rem;" data-translate-key="skills">Habilidades</h2>
+  
+    <div class="skills-grid" data-aos="fade-left">
+        <div class="skill-item" style="--r: -15;" data-text="HTML">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
+        </div>
+        <div class="skill-item" style="--r: 0;" data-text="javascript">         
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" />
+        </div>
+        <div class="skill-item" style="--r: 15;" data-text="Java">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" />
+        </div>
+        <div class="skill-item" style="--r: 15;" data-text="Python"> 
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" />
+        </div>
+        <div class="skill-item" style="--r: 15;" data-text="SQL">  
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" />
+        </div>
+        <div class="skill-item" style="--r: 15;" data-text="PHP"> 
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" />
+        </div>
+    </div>
+</section>
+
+  <!-- Projetos -->
+
+<section class="projects" id="projects">
+  <h2 data-aos="zoom-in" style="text-align: center; font-size: 2rem;" data-translate-key="projects">Projetos</h2>
+
+  <div class="projects-grid">
+    <div class="project-card" data-aos="fade-up">
+      <img src="src/img/Calculator.png" alt="" style="height: 200px; margin: 25px 0; border-radius: 10px;">
+      <h3 data-translate-key="calcTittle">Calculadora de Ganhos</h3>
+      <p data-translate-key="calcDesc">Um app em Python que calcula automaticamente o total de horas trabalhadas e os ganhos diários.</p>
+      <div class="link-project">
+      <a href="https://github.com/AlefSantosDev/Calculadora-de-ganho-em-python" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    </div>
+    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+      <img src="src/img/whatsapp-bot.png" alt="" style="height: 200px; margin: 25px 0; border-radius: 10px;">
+      <h3 data-translate-key="botTittle">Bot WhatsApp (n8n)</h3>
+      <p data-translate-key="botDesc">Bot de automação com mensagens de saudação únicas e controle de fluxo via n8n + Waha.</p>
+      <div class="link-project">
+      <a href="https://github.com/AlefSantosDev" target="_blank" aria-label="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    </div> 
+  </div>
+  <p data-aos="fade-up" style="text-align: center;" data-translate-key="soonText">Em breve você verá mais projetos aqui.</p>
+</section>
+
+  <!-- Contato -->
+
+<section class="contact" id="contact">
+  <div class="content">
+    <h2 data-aos="fade-up" data-translate-key="contact">Contato</h2>
+    <p data-aos="fade-up" data-translate-key="contactSubtitle">Entre em contato comigo preenchendo o formulário ou usando os dados abaixo.</p>
+
+    <div class="container">
+      <div class="contactInfo" data-aos="fade-right">
+        <div class="box">
+          <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="text">
+            <h3>Email</h3>
+            <p>alefnomatriz@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="box">
+          <div class="icon"><i class="fa-solid fa-phone"></i></div>
+          <div class="text">
+            <h3 data-translate-key="phone">Telefone</h3>
+            <p>(13) 99760-0717</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulário -->
+
+      <div class="form" data-aos="fade-left">
+        <form method="POST" action="https://formsubmit.co/alefnomatriz@gmail.com">
+          <h2 data-translate-key="sendMsg">Envie uma mensagem</h2>
+
+          <div class="input">
+            <label for="email" data-translate-key="yourEmail">Seu email</label>
+            <input type="email" id="email" name="email" required placeholder="seu@email.com">
+          </div>
+
+          <div class="input">
+            <label for="mensagem" data-translate-key="mesage">Mensagem</label>
+            <textarea id="mensagem"  name="mensagem" rows="5" required placeholder="Escreva sua mensagem..."></textarea>
+          </div>
+
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://alefsantosdev.github.io/Portfolio/"
+
+          <div class="input">
+            <button type="submit" data-translate-key="send">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <script src="src/Js/script.js"></script>
+  <script src="src/Js/lang.js"></script>
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
+</section>
