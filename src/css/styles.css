@@ -444,12 +444,6 @@ a[aria-label="WhatsApp"] i {
   padding: 35px 20px;
 }
 
-.col header.title{
-	font-family: helvetica;
-
-	padding: 0px 0px 20px 30px;
-}
-
 .col .contents{
 	padding: 0px 30px;
 	border-left: 2px solid #bababa;
@@ -491,7 +485,6 @@ a[aria-label="WhatsApp"] i {
 .box h3{
 	font-size: 19px;
 	padding: 10px 0px 6px;
-	font-family: helvetica;
 }
 
 .box p{
