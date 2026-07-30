@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Admin - Portfólio</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background: #222; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 80vh; }
+        .box { background: #333; padding: 30px; border-radius: 10px; width: 100%; max-width: 400px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        input, textarea { padding: 12px; border-radius: 5px; border: none; background: #444; color: #fff; font-size: 16px; }
+        button { padding: 12px; cursor: pointer; background: #ffcc00; border: none; font-weight: bold; border-radius: 5px; font-size: 16px; color: #222; }
+        button:hover { background: #e6b800; }
+        .hidden { display: none !important; }
+        h1 { margin-bottom: 20px; font-size: 24px; text-align: center; }
+        .logout-btn { background: #ff4444; color: #fff; margin-bottom: 15px; }
+        .logout-btn:hover { background: #cc0000; }
+        
+        /* Estilo para o botão Voltar */
+        .back-btn { 
+            display: block; 
+            text-align: center; 
+            margin-top: 15px; 
+            background: #555; 
+            color: #fff; 
+            padding: 10px; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            font-weight: bold; 
+        }
+        .back-btn:hover { background: #666; }
+    </style>
+</head>
+<body>
+
+    <!-- TELA DE LOGIN -->
+    <div class="box" id="tela-login">
+        <h1>Login Admin</h1>
+        <form id="form-login">
+            <input type="email" id="email-admin" placeholder="Seu e-mail" required>
+            <input type="password" id="senha-admin" placeholder="Sua senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <!-- Botão para voltar ao site principal -->
+        <a href="index.html" class="back-btn">← Voltar para o Main</a>
+    </div>
+
+    <!-- PAINEL DE CADASTRO -->
+    <div class="box hidden" id="painel-admin">
+        <h1>Adicionar Projeto</h1>
+        <button type="button" class="logout-btn" id="btn-sair">Sair da Conta</button>
+        <form id="form-projeto">
+            <input type="text" id="titulo" placeholder="Título do Projeto" required>
+            <textarea id="descricao" placeholder="Descrição curta" required></textarea>
+            <input type="url" id="linkImagem" placeholder="URL Direta da Imagem (ex: ImgBB)" required>
+            <input type="url" id="linkProjeto" placeholder="Link do GitHub ou Site" required>
+            <button type="submit">Salvar no Firebase</button>
+        </form>
+        <a href="index.html" class="back-btn">← Voltar para o Main</a>
+    </div>
+
+    <!-- Script de Autenticação e Firestore -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA-vaw2QpHagdjyKPyH0cXxbmLswal86Uo",
+            authDomain: "portfolio-e179c.firebaseapp.com",
+            projectId: "portfolio-e179c",
+            storageBucket: "portfolio-e179c.firebasestorage.app",
+            messagingSenderId: "1047860770726",
+            appId: "1:1047860770726:web:6afd51307c7b050b4f4167",
+            measurementId: "G-MQ6ZHL106E"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const auth = getAuth(app);
+
+        const telaLogin = document.getElementById('tela-login');
+        const painelAdmin = document.getElementById('painel-admin');
+        const formLogin = document.getElementById('form-login');
+        const formProjeto = document.getElementById('form-projeto');
+        const btnSair = document.getElementById('btn-sair');
+
+        formLogin.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email-admin').value;
+            const senha = document.getElementById('senha-admin').value;
+
+            try {
+                await signInWithEmailAndPassword(auth, email, senha);
+            } catch (erro) {
+                console.error("Erro no login: ", erro);
+                alert("E-mail ou senha incorretos, ou autenticação não ativada no Firebase.");
+            }
+        });
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                telaLogin.classList.add('hidden');
+                painelAdmin.classList.remove('hidden');
+            } else {
+                telaLogin.classList.remove('hidden');
+                painelAdmin.classList.add('hidden');
+            }
+        });
+
+        btnSair.addEventListener('click', async () => {
+            await signOut(auth);
+        });
+
+        formProjeto.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const titulo = document.getElementById('titulo').value;
+            const descricao = document.getElementById('descricao').value;
+            const linkImagem = document.getElementById('linkImagem').value;
+            const linkProjeto = document.getElementById('linkProjeto').value;
+
+            try {
+                const docRef = await addDoc(collection(db, "projetos"), {
+                    titulo: titulo,
+                    descricao: descricao,
+                    linkImagem: linkImagem,
+                    linkProjeto: linkProjeto
+                });
+                alert("Sucesso! Projeto salvo com ID: " + docRef.id);
+                formProjeto.reset();
+            } catch (erro) {
+                console.error("Erro ao salvar: ", erro);
+                alert("Ocorreu um erro ao salvar o projeto.");
+            }
+        });
+    </script>
+</body>
+</html>

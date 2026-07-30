@@ -55,6 +55,9 @@
       <option value="es">Español</option>
     </select>
   </div>
+<a href="admin.html" class="admin-menu-link">
+    <i class="fa fa-address-card" aria-hidden="true"></i> Admin
+</a>
   </div>
 </nav>
 
@@ -155,27 +158,7 @@
 <section class="projects" id="projects">
   <h2 data-aos="zoom-in" style="text-align: center; font-size: 2rem;" data-translate-key="projects">Projetos</h2>
 
-  <div class="projects-grid">
-    <div class="project-card" data-aos="fade-up">
-      <img src="src/img/Calculator.png" alt="" style="height: 200px; margin: 25px 0; border-radius: 10px;">
-      <h3 data-translate-key="calcTittle">Calculadora de Ganhos</h3>
-      <p data-translate-key="calcDesc">Um app em Python que calcula automaticamente o total de horas trabalhadas e os ganhos diários.</p>
-      <div class="link-project">
-      <a href="https://github.com/AlefSantosDev/Calculadora-de-ganho-em-python" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    </div>
-    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-      <img src="src/img/TermoCesari.png" alt="" style="height: 200px; margin: 25px 0; border-radius: 10px;">
-      <h3 data-translate-key="botTittle">Termo Cesari (Wordle)</h3>
-      <p data-translate-key="botDesc">Termo Cesari é um jogo inspirado no Wordle e Termo, desenvolvido para gamificar situações do dia a dia na empresa Cesari.</p>
-      <div class="link-project">
-      <a href="https://github.com/AlefSantosDev/Termo-Cesari" target="_blank" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    </div> 
+  <div class="projects-grid" id="meus-projetos-dinamicos">
   </div>
   <p data-aos="fade-up" style="text-align: center;" data-translate-key="soonText">Em breve você verá mais projetos aqui.</p>
 </section>
@@ -234,6 +217,8 @@
   </div>
 </section>
 
+
+  <script type="module" src="src/Js/admin.js"></script>
   <script src="src/Js/script.js"></script>
   <script src="src/Js/lang.js"></script>
   <!-- AOS Animation JS -->

@@ -37,7 +37,7 @@ function closeSettingsMenu() {
     }
 }
 
-// --- Menu Hambúrguer para mobile ---
+// --- Menu mobile ---
 
 if (hamburger && navList) {
     hamburger.addEventListener("click", () => {

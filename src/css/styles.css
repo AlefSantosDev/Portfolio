@@ -739,6 +739,32 @@ a[aria-label="WhatsApp"] i {
     background-color: #e6b800;
 }
 
+.admin-menu-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: var(--especial-color);
+    color: var(--asphalt);
+    font-weight: bold;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-menu-link:hover {
+    background-color: #e6b800;
+}
+
+body.dark-mode .admin-menu-link {
+    background-color: var(--sky);
+    color: var(--paper);
+}
+
+body.dark-mode .admin-menu-link:hover {
+    background-color: #174488;
+}
+
 /* --- Nav mobile --- */
 
 .hamburger {
