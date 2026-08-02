@@ -28,6 +28,11 @@ const darkModeToggle = document.getElementById("darkModeToggle");
 function closeNavMenu() {
     if (navList.classList.contains("active")) {
         navList.classList.remove("active");
+        const icon = hamburger?.querySelector("i");
+        if (icon) {
+            icon.classList.add("fa-bars");
+            icon.classList.remove("fa-xmark");
+        }
     }
 }
 
@@ -40,9 +45,17 @@ function closeSettingsMenu() {
 // --- Menu mobile ---
 
 if (hamburger && navList) {
+    const hamburgerIcon = hamburger.querySelector("i");
+
     hamburger.addEventListener("click", () => {
         closeSettingsMenu();
         navList.classList.toggle("active");
+
+        if (hamburgerIcon) {
+            const isOpen = navList.classList.contains("active");
+            hamburgerIcon.classList.toggle("fa-bars", !isOpen);
+            hamburgerIcon.classList.toggle("fa-xmark", isOpen);
+        }
     });
 }
 
@@ -121,4 +134,88 @@ document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
       });
     }
   });
+});
+
+// --- Scrollspy: destaca o link da seção visível na navbar ---
+
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-list a[href^="#"]');
+
+if (sections.length && navLinks.length) {
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(section => spyObserver.observe(section));
+}
+
+// --- Botão Voltar ao topo ---
+
+const backToTopBtn = document.getElementById('backToTop');
+
+if (backToTopBtn) {
+  window.addEventListener('scroll', () => {
+    backToTopBtn.classList.toggle('visible', window.scrollY > 500);
+  });
+
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+// --- Ano dinâmico no rodapé ---
+
+const footerYear = document.getElementById('footerYear');
+if (footerYear) {
+  footerYear.textContent = new Date().getFullYear();
+}
+
+// --- Lightbox das imagens de projeto ---
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src, alt) {
+  if (!lightbox || !lightboxImg) return;
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
+  lightbox.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  if (!lightbox) return;
+  lightbox.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('click', (e) => {
+  const thumb = e.target.closest('.project-thumb');
+  if (thumb) {
+    const src = thumb.dataset.lightbox || thumb.querySelector('img')?.src;
+    const alt = thumb.querySelector('img')?.alt;
+    if (src) openLightbox(src, alt);
+  }
+});
+
+if (lightboxClose) {
+  lightboxClose.addEventListener('click', closeLightbox);
+}
+
+if (lightbox) {
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
 });

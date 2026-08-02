@@ -31,6 +31,15 @@ const translations = {
     yourEmail: "Seu email",
     mesage: "Mensagem",
     send: "Enviar",
+    heroRole: "Desenvolvedor Back-end & Entusiasta em IA",
+    heroCta: "Ver projetos",
+    viewAllProjects: "Ver todos no GitHub",
+    footerTagline: "Desenvolvido por Alef Dias.",
+    footerRights: "Todos os direitos reservados.",
+    certsTitle: "Certificados",
+    langsTitle: "Idiomas",
+    langEnglish: "Inglês",
+    langSpanish: "Espanhol",
   },
 
   en: {
@@ -65,6 +74,15 @@ const translations = {
     yourEmail: "Your Email",
     mesage: "Message",
     send: "Send",
+    heroRole: "Back-end Developer & AI Enthusiast",
+    heroCta: "View projects",
+    viewAllProjects: "View all on GitHub",
+    footerTagline: "Built by Alef Dias.",
+    footerRights: "All rights reserved.",
+    certsTitle: "Certifications",
+    langsTitle: "Languages",
+    langEnglish: "English",
+    langSpanish: "Spanish",
   },
 
   es: {
@@ -99,6 +117,15 @@ const translations = {
     yourEmail: "Tu email",
     mesage: "Mensaje",
     send: "Enviar",
+    heroRole: "Desarrollador Back-end y Entusiasta de IA",
+    heroCta: "Ver proyectos",
+    viewAllProjects: "Ver todos en GitHub",
+    footerTagline: "Desarrollado por Alef Dias.",
+    footerRights: "Todos los derechos reservados.",
+    certsTitle: "Certificados",
+    langsTitle: "Idiomas",
+    langEnglish: "Inglés",
+    langSpanish: "Español",
   }
 };
 
@@ -134,10 +161,17 @@ function applyTranslations(lang) {
   });
 }
 
+window.applyTranslations = applyTranslations;
+
 languageSelect.addEventListener("change", () => {
+  localStorage.setItem("language", languageSelect.value);
   applyTranslations(languageSelect.value);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const savedLang = localStorage.getItem("language");
+  if (savedLang && translations[savedLang]) {
+    languageSelect.value = savedLang;
+  }
   applyTranslations(languageSelect.value);
 });

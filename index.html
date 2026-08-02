@@ -3,13 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfólio Alef Dias</title>
+  <title>Alef Dias | Portfólio</title>
+  <meta name="description" content="Portfólio de Alef Dias — desenvolvedor back-end e entusiasta de Inteligência Artificial, estudante de Sistemas de Informação em Santos - SP." />
+  <meta name="theme-color" content="#7c5cff" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Alef Dias | Portfólio" />
+  <meta property="og:description" content="Desenvolvedor back-end e entusiasta de Inteligência Artificial. Confira meus projetos, habilidades e formação." />
+  <meta property="og:image" content="src/img/Perfil.jpg" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="src/img/favicon.svg" />
+
   <!-- Devicon -->
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- AOS Animation CSS -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="src/css/styles.css" />
 </head>
 <body>
@@ -59,6 +76,7 @@
     <i class="fa fa-address-card" aria-hidden="true"></i> Admin
 </a>
   </div>
+  </div>
 </nav>
 
 <!-- Inicio -->
@@ -66,6 +84,7 @@
 <section class="home" id="home">
   <div class="hello" data-aos="fade-up">
     <h1 id="typing">Hello, World</h1>
+    <p class="hero-subtitle" data-translate-key="heroRole">Desenvolvedor Back-end &amp; Entusiasta em IA</p>
 
     <div class="social-icons" data-aos="fade-up">
       <a href="https://github.com/AlefSantosDev" target="_blank" aria-label="GitHub">
@@ -78,7 +97,11 @@
         <i class="fab fa-whatsapp"></i>
       </a>
     </div>
-    <a href="src/Cv AlefDias.pdf" download class="btn-download" data-aos="fade-up"><i class="fa-solid fa-download"></i> CV</a>
+
+    <div class="hero-actions" data-aos="fade-up">
+      <a href="src/Cv AlefDias-2.pdf" download class="btn-download"><i class="fa-solid fa-download"></i> CV</a>
+      <a href="#projects" class="btn-primary" data-translate-key="heroCta"><i class="fa-solid fa-arrow-down"></i> Ver projetos</a>
+    </div>
   </div>
 </section>
 
@@ -122,7 +145,88 @@
         <p data-translate-key="bachelor">Curso superior focado em desenvolvimento de software, arquitetura de sistemas, inteligência artificial e gestão de projetos. Aprimoro constantemente minhas habilidades em programação.</p>
       </div>
     </div>
-  </div>  
+  </div>
+
+  <!-- Certificados -->
+  <div class="certifications" data-aos="fade-up">
+    <h3 class="subsection-title" data-translate-key="certsTitle">Certificados</h3>
+    <div class="certs-grid">
+
+      <a class="cert-card" href="https://www.credly.com/badges/a6f1db0e-27d8-4c22-8551-45d98c0cba8a/linked_in_profile" target="_blank" rel="noopener">
+        <div class="cert-badge badge-cisco">cisco</div>
+        <div class="cert-info">
+          <h4>Python Essentials 1</h4>
+          <span class="cert-issuer">Cisco</span>
+          <span class="cert-date-value">jun de 2025</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
+      </a>
+
+      <a class="cert-card" href="https://www.credly.com/badges/7a326e13-3e34-44df-99f0-7cf5578579a2/linked_in_profile" target="_blank" rel="noopener">
+        <div class="cert-badge badge-cisco">cisco</div>
+        <div class="cert-info">
+          <h4>Introduction to Data Science</h4>
+          <span class="cert-issuer">Cisco</span>
+          <span class="cert-date-value">jun de 2025</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
+      </a>
+
+      <a class="cert-card" href="https://www.credly.com/badges/202d0b2d-3389-449c-ac89-199ab9e74915/linked_in_profile" target="_blank" rel="noopener">
+        <div class="cert-badge badge-aws"><i class="fa-brands fa-aws"></i></div>
+        <div class="cert-info">
+          <h4>AWS Educate Machine Learning Foundations</h4>
+          <span class="cert-issuer">Amazon Web Services (AWS)</span>
+          <span class="cert-date-value">jun de 2025</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
+      </a>
+
+      <a class="cert-card" href="https://www.credly.com/badges/24ed451b-68aa-48f3-a8ae-0d9b7334d44f/linked_in_profile" target="_blank" rel="noopener">
+        <div class="cert-badge badge-aws"><i class="fa-brands fa-aws"></i></div>
+        <div class="cert-info">
+          <h4>AWS Educate Introduction to Cloud 101</h4>
+          <span class="cert-issuer">Amazon Web Services (AWS)</span>
+          <span class="cert-date-value">mai de 2025</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
+      </a>
+
+      <a class="cert-card" href="https://www.credly.com/badges/d8f87d4d-6308-405a-a328-5836c77efbb8/linked_in_profile" target="_blank" rel="noopener">
+        <div class="cert-badge badge-aws"><i class="fa-brands fa-aws"></i></div>
+        <div class="cert-info">
+          <h4>AWS Educate Introduction to Generative AI</h4>
+          <span class="cert-issuer">Amazon Web Services (AWS)</span>
+          <span class="cert-date-value">mai de 2025</span>
+        </div>
+        <i class="fa-solid fa-arrow-up-right-from-square cert-link-icon"></i>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Idiomas -->
+
+  <div class="languages" data-aos="fade-up">
+    <h3 class="subsection-title" data-translate-key="langsTitle">Idiomas</h3>
+    <div class="languages-grid">
+      <div class="language-item">
+        <div class="language-head">
+          <span class="language-name" data-translate-key="langEnglish">Inglês</span>
+          <span class="language-level">B1</span>
+        </div>
+        <div class="language-bar"><span style="width: 55%;"></span></div>
+      </div>
+
+      <div class="language-item">
+        <div class="language-head">
+          <span class="language-name" data-translate-key="langSpanish">Espanhol</span>
+          <span class="language-level">B1</span>
+        </div>
+        <div class="language-bar"><span style="width: 55%;"></span></div>
+      </div>
+    </div>
+  </div>
 </section>
 
   <!-- Habilidades -->
@@ -160,7 +264,11 @@
 
   <div class="projects-grid" id="meus-projetos-dinamicos">
   </div>
-  <p data-aos="fade-up" style="text-align: center;" data-translate-key="soonText">Em breve você verá mais projetos aqui.</p>
+  <div class="projects-footer" data-aos="fade-up">
+    <a href="https://github.com/AlefSantosDev" target="_blank" class="btn-outline" data-translate-key="viewAllProjects">
+      <i class="fab fa-github"></i> Ver todos no GitHub
+    </a>
+  </div>
 </section>
 
   <!-- Contato -->
@@ -189,7 +297,7 @@
         </div>
       </div>
 
-      <!-- Formulário -->
+      <!-- Form -->
 
       <div class="form" data-aos="fade-left">
         <form method="POST" action="https://formsubmit.co/alefnomatriz@gmail.com">
@@ -206,7 +314,8 @@
           </div>
 
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://alefsantosdev.github.io/Portfolio/"
+          <input type="hidden" name="_next" value="https://alefsantosdev.github.io/Portfolio/">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
 
           <div class="input">
             <button type="submit" data-translate-key="send">Enviar</button>
@@ -217,8 +326,28 @@
   </div>
 </section>
 
+  <!-- Footer -->
 
-  <script type="module" src="src/Js/admin.js"></script>
+<footer class="site-footer">
+  <div class="footer-social">
+    <a href="https://github.com/AlefSantosDev" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/alef-santos-dias-51410128a/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+    <a href="https://wa.me/5513997600717" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+  <p data-translate-key="footerTagline">Desenvolvido por Alef Dias.</p>
+  <p class="footer-rights">© <span id="footerYear"></span> Alef Dias — <span data-translate-key="footerRights">Todos os direitos reservados.</span></p>
+</footer>
+
+<button id="backToTop" class="back-to-top" aria-label="Voltar ao topo">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fechar visualização"><i class="fa-solid fa-xmark"></i></button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+
+  <script type="module" src="src/Js/projects.js"></script>
   <script src="src/Js/script.js"></script>
   <script src="src/Js/lang.js"></script>
   <!-- AOS Animation JS -->
@@ -231,4 +360,3 @@
   </script>
 </body>
 </html>
-</section>
